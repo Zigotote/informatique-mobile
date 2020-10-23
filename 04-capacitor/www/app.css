@@ -1,0 +1,13 @@
+img {
+  width: 300px;
+}
+
+#content {
+  text-align: center;
+}
+
+#camera-button {
+  position: fixed;
+  bottom: 0px;
+  z-index: 1000;
+}
