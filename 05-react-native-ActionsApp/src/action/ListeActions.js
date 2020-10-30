@@ -1,15 +1,15 @@
-import React from 'react'
-import {View, Text} from 'react-native'
-import UneAction from './UneAction'
+import React from "react";
+import { View, Text } from "react-native";
+import UneAction from "./UneAction";
 
+const ListeActions = ({ actions }) => {
+  return (
+    <View>
+      {actions.map((action, id) => (
+        <UneAction key={id} action={action} />
+      ))}
+    </View>
+  );
+};
 
-const ListeActions = () => {
-
-    return (
-        <View>
-            <Text>Ici prochainement une liste d'actions</Text>
-        </View>
-    )
-}
-
-export default ListeActions
+export default ListeActions;

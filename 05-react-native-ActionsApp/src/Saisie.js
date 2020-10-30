@@ -25,6 +25,7 @@ const Saisie = ({ texteSaisie, evtTexteModifie }) => (
       placeholderTextColor="#CACACA"
       selectionColor="#666666"
       onChangeText={evtTexteModifie}
+      value={texteSaisie}
     />
   </View>
 );
