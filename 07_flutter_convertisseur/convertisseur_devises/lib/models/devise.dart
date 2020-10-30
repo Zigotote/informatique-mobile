@@ -25,4 +25,8 @@ extension DeviseExtension on Devise {
   String get libelle {
     return libelles[this];
   }
+
+  double get leTaux {
+    return taux[this];
+  }
 }

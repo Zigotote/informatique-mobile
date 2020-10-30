@@ -77,7 +77,11 @@ class _ConvertisseurDevisePage extends State<ConvertisseurDevisePage> {
         Spacer(
           flex: 2,
         ),
-        ElevatedButton(onPressed: () => true, child: Text('Convertir')),
+        ElevatedButton(onPressed: () {
+          setState(() {
+            _resultat = _valeur*_deviseFinale.leTaux/_deviseInitial.leTaux;
+          });
+        }, child: Text('Convertir')),
         Spacer(
           flex: 2,
         ),
