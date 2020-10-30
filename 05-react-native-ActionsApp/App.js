@@ -40,6 +40,16 @@ export default class App extends React.Component {
     });
   }
 
+  supprimerAction(nom) {
+    console.log("Vous avez supprimé " + nom);
+    let tmpActions = [...this.state.actions];
+    let index = tmpActions.indexOf(nom);
+    if (index != -1) {
+      tmpActions.splice(index, 1);
+      this.setState({ actions: tmpActions });
+    }
+  }
+
   render() {
     const { texteSaisie, actions } = this.state;
 
@@ -51,7 +61,10 @@ export default class App extends React.Component {
             texteSaisie={texteSaisie}
             evtTexteModifie={(titre) => this.quandLaSaisieChange(titre)}
           />
-          <ListeActions actions={actions} />
+          <ListeActions
+            actions={actions}
+            supprimerAction={this.supprimerAction}
+          />
           <BoutonCreer onValider={() => this.validerNouvelleAction()} />
         </ScrollView>
         <Menu />
