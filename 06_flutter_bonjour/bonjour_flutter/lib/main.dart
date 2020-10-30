@@ -33,7 +33,15 @@ class BoutonContactezMoi extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Text('Contactez-moi !'), 
-      onPressed: () => true,
+      onPressed: () => showDialog(
+        context: context, 
+        builder: (BuildContext context) {
+          return AlertDialog(
+            title: Text('Contactez-moi'),
+            content: Text('Je suis joignable à l\'IMT Atlantique')
+          );
+        }
+      ),
       style: ElevatedButton.styleFrom(primary: Colors.purple),
     );
   }
