@@ -1,4 +1,5 @@
 import 'package:convertisseur_devises/models/devise.dart';
+import 'package:convertisseur_devises/widgets/liste_devises.dart';
 import 'package:convertisseur_devises/widgets/saisie_nombre.dart';
 import '../styles.dart';
 import 'package:flutter/material.dart';
@@ -52,27 +53,21 @@ class _ConvertisseurDevisePage extends State<ConvertisseurDevisePage> {
           'De',
           style: AppStyle.labelStyle,
         ),Spacer(),
-        DropdownButton(
-          isExpanded: true,
-          value: _deviseInitial,
-          onChanged: (newVal) {
+        ListeDevises(devise: _deviseInitial, changerDevise:  (newVal) {
             setState(() {
               _deviseInitial = newVal;
             });
           },
-          items: Devise.values.map((e) => DropdownMenuItem<Devise>(child: Text(e.libelle), value: e)).toList()),
+        ),
         Spacer(),
         Text('Vers', style: AppStyle.labelStyle),
         Spacer(),
-        DropdownButton(
-          isExpanded: true,
-          value: _deviseFinale,
-          onChanged: (newVal) {
+        ListeDevises(devise: _deviseFinale, changerDevise:  (newVal) {
             setState(() {
               _deviseFinale = newVal;
             });
           },
-          items: Devise.values.map((e) => DropdownMenuItem<Devise>(child: Text(e.libelle), value: e)).toList()),
+        ),
         Spacer(
           flex: 2,
         ),
