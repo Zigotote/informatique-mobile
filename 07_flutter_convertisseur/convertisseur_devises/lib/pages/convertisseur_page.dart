@@ -1,5 +1,6 @@
 import 'package:convertisseur_devises/models/devise.dart';
-import 'package:convertisseur_devises/styles.dart';
+import 'package:convertisseur_devises/widgets/saisie_nombre.dart';
+import '../styles.dart';
 import 'package:flutter/material.dart';
 
 class ConvertisseurDevisePage extends StatefulWidget { 
@@ -40,13 +41,11 @@ class _ConvertisseurDevisePage extends State<ConvertisseurDevisePage> {
           style: AppStyle.labelStyle,
         ),
         Spacer(),
-        TextField( 
-          style: AppStyle.inputStyle,
-          onChanged: (saisie){
+        SaisieNombre( changerNombre: (saisie) => {
             setState(() {
               _valeur = double.parse(saisie);
-            });
-          },
+            })
+          }
         ),
         Spacer(),
         Text(
